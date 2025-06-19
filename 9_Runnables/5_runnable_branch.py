@@ -23,6 +23,15 @@ parser = StrOutputParser()
 
 report_gen_chain = RunnableSequence(prompt1,model,parser)
 
+# sub = input("Enter Topic: ")
+
+# result = report_gen_chain.invoke({'topic':sub})
+
+# print(result)
+
+# with open(f"{sub}_report.txt", "w", encoding="utf-8") as file:
+#     file.write(result)
+
 branch_chain = RunnableBranch(
     (lambda x:len(x.split())>500,RunnableSequence(prompt2,model,parser)),
     RunnablePassthrough() 
@@ -33,3 +42,4 @@ final_chain = RunnableSequence(report_gen_chain,branch_chain)
 result = final_chain.invoke({'topic':'India Vs Pakistan Match 2025'})
 
 print(result)
+
