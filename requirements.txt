@@ -25,3 +25,5 @@ python-dotenv
 numpy
 scikit-Learn
 
+chromadb
+tiktoken
