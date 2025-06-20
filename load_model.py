@@ -28,7 +28,7 @@ def Thebloke_llm():
 
 def Mistral_llm():
     llm = ChatOpenAI(
-        model="thebloke/mistral-7b-instruct-v0.1",  # Updated to match LM Studio logs
+        model="itlwas/mistral-7b-instruct-v0.1",  # Updated to match LM Studio logs
         temperature=0.7,
         openai_api_base=os.getenv("OPENAI_API_BASE"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
